@@ -1,0 +1,17 @@
+﻿@model HandleErrorInfo
+
+<html>
+    <head>
+        <title>Error</title>
+    </head>
+    <body>
+        <h4>Error</h4>
+        <p style="color:red">Error occurred</p>
+        <p>@Model.Exception.Message</p>
+        <p>@Model.Exception.StackTrace</p>
+        <p>@Model.ControllerName</p>
+        <p>@Model.ActionName</p>
+    </body>
+</html>
+
+

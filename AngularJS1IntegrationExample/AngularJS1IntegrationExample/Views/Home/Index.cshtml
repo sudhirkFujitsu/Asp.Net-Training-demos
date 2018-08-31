@@ -1,0 +1,33 @@
+﻿<html>
+    <head>
+        <title>Index</title>
+        <script src="~/node_modules/angular/angular.js"></script>
+        <script>
+            var app = angular.module("mymodule", []);
+            app.controller("mycontroller", function ($scope)
+            {
+                $scope.firstname = null;
+                $scope.lastname = null;
+                $scope.fullname;
+
+                $scope.onOKClicked = function ()
+                {
+                    $scope.fullname = $scope.firstname + " " + $scope.lastname;
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <h4>AngularJS</h4>
+        <div ng-app="mymodule">
+            <div ng-controller="mycontroller">
+                Firstname: <input type="text" ng-model="firstname" /><br />
+                Lastname: <input type="text" ng-model="lastname" /><br />
+                <input type="button" value="OK" ng-click="onOKClicked()" /><br />
+                Fullname: <input type="text" ng-model="fullname" readonly="readonly" />
+            </div>
+        </div>
+    </body>
+</html>
+
+

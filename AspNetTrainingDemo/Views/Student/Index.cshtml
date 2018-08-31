@@ -1,0 +1,29 @@
+﻿@*@model AspNetTrainingDemo.Models.Student*@
+    @using AspNetTrainingDemo.Models
+
+@{
+    Layout = null;
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <label>Temporary Name:</label>  @TempData["name"];
+        <ul>
+            @foreach (var std in ViewData["students"] as IList<Student>)
+            {
+                <li>
+                    @std.StudentName
+                </li>
+            }
+        </ul>
+    </div>
+</body>
+</html>

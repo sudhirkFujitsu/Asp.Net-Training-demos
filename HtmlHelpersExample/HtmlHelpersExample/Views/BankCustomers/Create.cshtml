@@ -1,0 +1,57 @@
+﻿@model HtmlHelpersExample.Models.BankCustomer
+
+<html>
+    <head>
+        <title>ICICI Bank</title>
+    </head>
+    <body>
+        <h4>Bank Custom Registration Form</h4>
+        <form action="/BankCustomers/Create" method="post">
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(model => model.BankCustomerName)</td>
+                    <td>@Html.TextBoxFor(model => model.BankCustomerName)</td>
+                </tr>
+                 <tr>
+                     <td>@Html.LabelFor(model => model.Password)</td>
+                     <td>@Html.PasswordFor(model => model.Password)</td>
+                </tr>
+                 <tr>
+                     <td>@Html.LabelFor(model => model.Address)</td>
+                    <td>@Html.TextAreaFor(model => model.Address)</td>
+                </tr>
+                 <tr>
+                    <td>@Html.LabelFor(model => model.Gender)</td>
+                    <td>
+                        @Html.RadioButtonFor(model => model.Gender, "Male") Male
+                        @Html.RadioButtonFor(model => model.Gender, "Female") Female
+                    </td>
+                </tr>
+                 <tr>
+                    <td></td>
+                    <td>
+                        @Html.CheckBoxFor(model => model.ChequeBookFacility)
+                        @Html.LabelFor(model => model.ChequeBookFacility)
+                    </td>
+                </tr>
+                 <tr>
+                    <td>@Html.LabelFor(model => model.Country)</td>
+                    <td>@Html.DropDownListFor(model => model.Country, ViewBag.Countries as List<SelectListItem>)</td>
+                </tr>
+                 <tr>
+                    <td>@Html.LabelFor(model => model.InitialDeposit)</td>
+                    <td>@Html.TextBoxFor(model => model.InitialDeposit)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.Hidden("AccountingOpeningDateAndTime", DateTime.Now.ToString())
+                        <input type="submit" value="Register" />
+                    </td>
+                </tr>
+            </table>            
+        </form>
+    </body>
+</html>
+
+

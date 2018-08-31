@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+    <title>About</title>
+</head>
+<body>
+    <h5>Application State</h5>
+    <p>Emp ID: @ViewBag.emp2.EmpID</p>
+    <p>Emp Name: @ViewBag.emp2.EmpName</p>
+    <p>Salary: @ViewBag.emp2.Salary</p>
+    <hr />
+    @{ 
+        var emp3 = (ApplicationStateExample.Models.Employee)ViewContext.HttpContext.Application["myemployee"];
+    }
+    <p>Emp ID: @emp3.EmpID</p>
+    <p>Emp Name: @emp3.EmpName</p>
+    <p>Salary: @emp3.Salary</p>
+
+</body>
+</html>
+
+
+

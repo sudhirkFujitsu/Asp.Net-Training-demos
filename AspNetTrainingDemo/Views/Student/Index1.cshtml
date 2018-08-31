@@ -1,0 +1,20 @@
+﻿@using AspNetTrainingDemo.Models
+@{
+    ViewBag.Title = "Index1";
+}
+
+<h2>Listt Of Students</h2>
+
+<div>
+    <label>Temporary Name:</label>  @TempData["name"];
+    <label>Temporary Age:</label>  @TempData["age"];
+
+    <ul>
+        @foreach (var std in ViewData["students"] as IList<Student>)
+        {
+            <li>
+                @std.StudentName
+            </li>
+        }
+    </ul>
+</div>
